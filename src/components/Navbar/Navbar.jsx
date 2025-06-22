@@ -1,6 +1,6 @@
 // src/components/Navbar/Navbar.jsx
 import React, { useState, useEffect } from 'react';
-import './Navbar.css';
+import './Navbar.css'; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
