@@ -59,9 +59,9 @@ const Footer = () => {
               Solvira Tech Pvt. Ltd. is an India-based IT company engaged in developing out-of-box products that aim to bring smartness to the usual way of running business operations.
             </p>
             <div className="footer-social">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaInstagram /></a>
-              <a href="#"><FaLinkedinIn /></a>
+              <a href="#home"><FaFacebookF /></a>
+              <a href="#home"><FaInstagram /></a>
+              <a href="#home"><FaLinkedinIn /></a>
             </div>
           </motion.div>
 
@@ -73,12 +73,12 @@ const Footer = () => {
           >
             <h4>Useful <span>Links</span></h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Projects</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">FAQs</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#aboutus">About Us</a></li>
+              <li><a href="#faq">FAQs</a></li>
+              <li><a href="#contactus">Contact Us</a></li>
             </ul>
           </motion.div>
 
@@ -92,14 +92,14 @@ const Footer = () => {
             <div className="post">
               <img src="https://img.icons8.com/ios-filled/50/bitcoin.png" alt="Blockchain" />
               <div>
-                <a href="#">COMNG SOON...</a>
+                <a href="#home">COMNG SOON...</a>
                 <p>May 12, 2025</p>
               </div>
             </div>
             <div className="post">
               <img src="https://img.icons8.com/ios-filled/50/artificial-intelligence.png" alt="Artificial Intelligence" />
               <div>
-                <a href="#">COMING SOON...</a>
+                <a href="#home">COMING SOON...</a>
                 <p>April 14, 2025</p>
               </div>
             </div>
