@@ -1,0 +1,249 @@
+
+ .footer {
+  background-color: #1c1c1c;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  /* position: absolute; */
+  padding-top: 20px; /* Reserve space to make room for green box */
+}
+
+.footer-wrapper {
+  position: relative;
+  /* padding-top: 40px; */
+  /* margin-top: 10px; Reserves space above the footer for the green box */
+}
+
+.footer-contact {
+  position: relative;
+  transform: translateX(-50%) translateY(-50%);
+  background-image: url('/public/images/contact-bg.png');
+  top: 45px; /* Overlap within footer only */
+  left: 0%;
+  right: 0;
+  margin: 0 auto;
+  width: calc(100% - 80px);
+  max-width: 1000px; /* Optional for large screens */
+  background-color: #8dc63f;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  border-radius: 6px;
+  flex-wrap: wrap;
+  text-align: left;
+  min-height: 90px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 8px 0;
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-contact-item strong {
+  font-size: 16px;
+}
+
+.footer-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: white;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 1rem;
+  flex-wrap: wrap;
+}
+
+
+
+.footer-about, .footer-links, .footer-posts {
+  flex: 1;
+  margin: 1rem;
+  min-width: 250px;
+}
+
+.footer-logo img {
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+
+.footer-about p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.footer-social a {
+  margin-right: 10px;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer-social a:hover {
+  color: #8dc63f;
+  transform: scale(1.2);
+}
+
+.footer-links h4, .footer-posts h4 {
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #8dc63f;
+}
+
+.footer-posts .post {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.footer-posts img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.footer-posts a {
+  color: #ccc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-posts a:hover {
+  color: #8dc63f;
+}
+
+.footer-posts p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.footer-bottom {
+  background-color: #111;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #8dc63f;
+  color: white;
+  padding: 12px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.scroll-to-top:hover {
+  background-color: #6ea42f;
+  transform: translateY(-3px);
+}
+
+/* ===========================
+    Mobile Responsiveness
+=========================== */
+@media screen and (max-width: 768px) {
+
+  .footer-contact {
+    flex-direction: column;
+    padding: 20px 10px;
+    width: 90%;
+    top: -30px; /* Adjust overlap on mobile */
+    text-align: center;
+  }
+
+  .footer-contact-item {
+    justify-content: center;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .footer-main {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .footer-about, .footer-links, .footer-posts {
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .footer-links ul {
+    padding: 0;
+  }
+
+  .footer-posts .post {
+    justify-content: center;
+  }
+
+  .footer-posts img {
+    margin-right: 0.5rem;
+  }
+
+  .footer-social {
+    justify-content: center;
+    display: flex;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-contact-item {
+    min-width: unset;
+    font-size: 0.85rem;
+  }
+
+  .footer-logo img {
+    max-width: 120px;
+  }
+
+  .footer-social a {
+    font-size: 1rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+    padding: 0.75rem;
+  }
+}
