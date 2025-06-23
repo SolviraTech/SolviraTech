@@ -3,7 +3,8 @@ import './Footer.css';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import ScrollToTop from './ScrollToTop';
-
+      const startYear = 2025; 
+       const currentYear = new Date().getFullYear();
 const Footer = () => {
   return (
     <>
@@ -18,7 +19,7 @@ const Footer = () => {
           <FaPhoneAlt className="footer-icon" />
           <div>
             <strong>(+91) 8948313502</strong><br />
-            solviratech@gmail.com<br />
+            solviraTech@gmail.com<br />
           </div>
         </div>
 
@@ -105,14 +106,14 @@ const Footer = () => {
             </div>
           </motion.div>
         </div>
-
+      
         <motion.div
           className="footer-bottom"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <p>Copyright © 2025 | SOLVIRA TECH SOLUTIONS PRIVATE LIMITED | All rights reserved</p>
+          <p>Copyright © {currentYear}  | SOLVIRA TECH SOLUTIONS PRIVATE LIMITED | All rights reserved</p>
         </motion.div>
 
         <ScrollToTop />
