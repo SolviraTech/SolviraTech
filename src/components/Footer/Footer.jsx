@@ -34,7 +34,7 @@ const Footer = () => {
         <div className="footer-contact-item">
           <FaMapMarkerAlt className="footer-icon" />
           <div>
-            <strong>COMING SOON ....,<br />COMING SOON ....<br />INDIA</strong>
+            <strong>COMING SOON ....<br />COMING SOON ....<br />INDIA</strong>
           </div>
         </div>
       </motion.div>
