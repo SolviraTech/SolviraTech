@@ -3,7 +3,7 @@ import './Footer.css';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import ScrollToTop from './ScrollToTop';
-      const startYear = 2025; 
+      // const startYear = 2025; 
        const currentYear = new Date().getFullYear();
 const Footer = () => {
   return (
