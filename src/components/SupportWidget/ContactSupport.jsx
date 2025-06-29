@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ContactSupport.css';
 import { FaUser, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 
 const ContactSupport = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,11 @@ const ContactSupport = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
+  const [error, setError] = useState(null);
+
+  // Initialize EmailJS with your user ID (you can get this from EmailJS dashboard)
+  // It's better to put this in a config file or environment variable
+  emailjs.init('Ys7_aEUCdR_yQ9kO0');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,13 +30,28 @@ const ContactSupport = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    // Simulate sending
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        'service_ihq2rwl',     // Service ID
+        'template_0z77wwz',   // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone_number: formData.countryCode + formData.mobile,
+          message: formData.message
+        },
+        'Ys7_aEUCdR_yQ9kO0'
+
+      );
+
+      console.log('Email sent successfully!', response.status, response.text);
+      
       setShowThankYou(true);
       setFormData({
         name: '',
@@ -39,22 +60,35 @@ const ContactSupport = () => {
         message: '',
         countryCode: '+91'
       });
-    }, 2000);
+    } 
+    catch (err) {
+  console.error('EmailJS Error Details:', {
+    code: err.status,
+    text: err.text,
+    fullError: err
+  });
+  setError('Failed to send message. Please try again later.');
+
+    }
   };
 
   const closeModal = () => {
-  const modal = document.querySelector('.thankyou-modal-content');
-  if (modal) {
-    modal.classList.add('fadeout');
-    setTimeout(() => {
-      setShowThankYou(false);
-    }, 400); // match fadeout duration
-  }
-};
-
+    const modal = document.querySelector('.thankyou-modal-content');
+    if (modal) {
+      modal.classList.add('fadeout');
+      setTimeout(() => {
+        setShowThankYou(false);
+      }, 400);
+    }
+  };
 
   return (
-    <div className="contact-support-wrapper">
+    <section id = 'contact' className='padding-top'>
+      <div className="services-heading">
+          {/* <h6 className="sub-heading">What We Do</h6> */}
+          <h2 className="main-heading">Contact US</h2>
+     </div>
+        <div className="contact-support-wrapper">
       <div className="contact-support-left">
         <h2>Solvira Tech Pvt. Ltd.</h2>
         <p>
@@ -68,6 +102,7 @@ const ContactSupport = () => {
 
       <div className="contact-support-right">
         <h3>Contact Us</h3>
+        {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <FaUser className="form-icon" />
@@ -142,6 +177,7 @@ const ContactSupport = () => {
         </div>
       )}
     </div>
+    </section>
   );
 };
 
