@@ -23,7 +23,7 @@ const handleContactClick = () => {
         showThumbs={false}
         showStatus={false}
         showArrows={false}
-        interval={3000}
+        interval={3500}
       >
         <div><img src="/images/service_01.jpeg" alt="Slide 1" /></div>
         <div><img src="/images/service_02.jpeg" alt="Slide 2" /></div>

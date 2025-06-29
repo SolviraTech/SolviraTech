@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './ContactSupport.css';
+// import './ContactSupport.css';
+ import './ContactSupport.css';
 import { FaUser, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
