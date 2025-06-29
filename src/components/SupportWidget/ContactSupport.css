@@ -91,7 +91,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 /* Phone Input Group */
-.phone-group {
+/* .phone-group {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -111,8 +111,75 @@ input:focus, textarea:focus, select:focus {
   width: 100px;
   height: 100%;
   font-size: 1rem;
+} */
+
+/* Phone Input Group - Perfect Alignment */
+.phone-group {
+  display: flex;
+  align-items: stretch; /* Changed from center to stretch */
+  gap: 10px;
 }
 
+.country-code-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.country-code-select select {
+  padding: 12px 30px 12px 12px; /* Right padding for arrow */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100px;
+  font-size: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23888888'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e") 
+    no-repeat right 10px center/15px;
+}
+
+.phone-group input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+  font-size: 1rem;
+  height: auto; /* Remove fixed height */
+}
+
+/* Ensure both elements have equal height */
+.country-code-select select,
+.phone-group input {
+  line-height: 1.5;
+  box-sizing: border-box;
+  min-height: 46px; /* Calculated height based on padding + font */
+}
+
+/* Focus states */
+.country-code-select select:focus,
+.phone-group input:focus {
+  border-color: #8dc63f;
+  box-shadow: 0 0 0 2px rgba(141, 198, 63, 0.2);
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .country-code-select select,
+  .phone-group input {
+    min-height: 42px;
+    padding: 10px;
+  }
+  
+  .country-code-select select {
+    width: 90px;
+    padding-right: 25px;
+    background-position: right 8px center;
+  }
+}
 /* Button Styles */
 .submit-btn {
   background-color: #8dc63f;
