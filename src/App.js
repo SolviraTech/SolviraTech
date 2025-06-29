@@ -5,7 +5,6 @@ import Footer from './components/Footer/Footer';
 import Services from './components/Services/Services';
 import AboutUs from './components/AboutUs/AboutUs';
 import ContactSupport from './components/SupportWidget/ContactSupport';
-import ParallaxFooter from './components/ParallaxFooter/ParallaxFooter';
 import Splash from './components/SplashScreen/Splash';
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
           <Services />
           <ContactSupport />
           <AboutUs />
-          <ParallaxFooter />
           <Footer />
         </>
       )}
