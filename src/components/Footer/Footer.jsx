@@ -82,10 +82,10 @@ const Footer = () => {
               <div className="about-text">
                 <p>Solvira Tech Pvt. Ltd. is an India-based IT company developing innovative products to bring smartness and efficiency to your business operations.</p>
                 <div className="social">
-                  <a href="#"><FaFacebookF className="social-icon" /></a>
-                  <a href="#"><FaInstagram className="social-icon" /></a>
-                  <a href="#"><FaLinkedinIn className="social-icon" /></a>
-                  <a href="#">
+                  <a href="#FB"><FaFacebookF className="social-icon" /></a>
+                  <a href="#IG"><FaInstagram className="social-icon" /></a>
+                  <a href="#LinkedIN"><FaLinkedinIn className="social-icon" /></a>
+                  <a href="#Twitter">
                     <span className="social-icon x-icon">
                       <i className="fa-brands fa-x-twitter"></i>
                     </span>
