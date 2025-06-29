@@ -18,7 +18,7 @@ const Splash = ({ onFinish }) => {
     setParticlesOptions({
       fullScreen: { enable: false },
       background: { color: "#0f2027" },
-      fpsLimit: 60,
+      fpsLimit:24,
       particles: {
         color: { value: "#ffffff" },
         links: {
