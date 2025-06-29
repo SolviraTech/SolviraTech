@@ -1,124 +1,138 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Footer.css';
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaClock, FaMapMarkerAlt } from 'react-icons/fa';
-import { motion } from 'framer-motion';
 import ScrollToTop from './ScrollToTop';
-      // const startYear = 2025; 
-       const currentYear = new Date().getFullYear();
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const currentYear = new Date().getFullYear();
+
 const Footer = () => {
+  const [email, setEmail] = useState('');
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+
+    // basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address.", {
+        position: "bottom-right",
+        autoClose: 3000,
+        style: {
+          background: "#1c1c1c",
+          color: "#fff",
+          border: "1px solid red",
+          borderRadius: "8px"
+        },
+        icon: "⚠️"
+      });
+      return;
+    }
+
+    toast.success("Thanks for subscribing to our newsletter!", {
+      position: "bottom-right",
+      autoClose: 3000,
+      style: {
+        background: "#1c1c1c",
+        color: "#fff",
+        border: "1px solid #8dc63f",
+        borderRadius: "8px"
+      },
+      icon: "✅"
+    });
+
+    setEmail('');
+  };
+
   return (
     <>
-      {/* Contact Bar (Green Box) */}
-      <motion.div
-        className="footer-contact"
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-      >
-        <div className="footer-contact-item">
-          <FaPhoneAlt className="footer-icon" />
-          <div>
-            <strong>(+91) 8948313502</strong><br />
-            solviraTech@gmail.com<br />
-          </div>
-        </div>
-
-        <div className="footer-contact-item">
-          <FaClock className="footer-icon" />
-          <div>
-            <strong>Mon - Sun</strong><br />
-            Available 24x7
-          </div>
-        </div>
-
-        <div className="footer-contact-item">
-          <FaMapMarkerAlt className="footer-icon" />
-          <div>
-            <strong>COMING SOON ....<br />COMING SOON ....<br />INDIA</strong>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Main Footer */}
-      <motion.footer
-        className="footer"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="footer-main">
-          <motion.div
-            className="footer-about"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="footer-logo">
-              <img src="https://www.ssjitsolutions.com/assets/images/logo.png" alt="Solvira Tech" />
-            </div>
-            <p>
-              Solvira Tech Pvt. Ltd. is an India-based IT company engaged in developing out-of-box products that aim to bring smartness to the usual way of running business operations.
-            </p>
-            <div className="footer-social">
-              <a href="#home"><FaFacebookF /></a>
-              <a href="#home"><FaInstagram /></a>
-              <a href="#home"><FaLinkedinIn /></a>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="footer-links"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <h4>Useful <span>Links</span></h4>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#aboutus">About Us</a></li>
-              <li><a href="#faq">FAQs</a></li>
-              <li><a href="#contactus">Contact Us</a></li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            className="footer-posts"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <h4>Recent <span>Posts</span></h4>
-            <div className="post">
-              <img src="https://img.icons8.com/ios-filled/50/bitcoin.png" alt="Blockchain" />
+      <footer className="animated-footer">
+        <div className="footer-content">
+          <div className="footer-contact">
+            <div className="contact-item">
+              <FaPhoneAlt className="icon" />
               <div>
-                <a href="#home">COMNG SOON...</a>
-                <p>May 12, 2025</p>
+                <strong>(+91) 8948313502</strong><br />
+                solviratech@gmail.com
               </div>
             </div>
-            <div className="post">
-              <img src="https://img.icons8.com/ios-filled/50/artificial-intelligence.png" alt="Artificial Intelligence" />
+            <div className="contact-item">
+              <FaClock className="icon" />
               <div>
-                <a href="#home">COMING SOON...</a>
-                <p>April 14, 2025</p>
+                <strong>Mon - Sun</strong><br />
+                Available 24x7
               </div>
             </div>
-          </motion.div>
+            <div className="contact-item">
+              <FaMapMarkerAlt className="icon" />
+              <div>
+                COMING SOON, INDIA
+              </div>
+            </div>
+          </div>
+
+          <div className="footer-main">
+            <div className="about-content">
+              <img
+                src="/images/transparent_logo.png"
+                alt="Solvira Tech"
+                className="logo"
+              />
+              <div className="about-text">
+                <p>Solvira Tech Pvt. Ltd. is an India-based IT company developing innovative products to bring smartness and efficiency to your business operations.</p>
+                <div className="social">
+                  <a href="#"><FaFacebookF className="social-icon" /></a>
+                  <a href="#"><FaInstagram className="social-icon" /></a>
+                  <a href="#"><FaLinkedinIn className="social-icon" /></a>
+                  <a href="#">
+                    <span className="social-icon x-icon">
+                      <i className="fa-brands fa-x-twitter"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* 2 animated footer cards */}
+            <div className="footer-cards">
+              <div className="footer-card newsletter-card">
+                <h4>Subscribe to our Newsletter</h4>
+                <form onSubmit={handleSubscribe}>
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <button type="submit">Subscribe</button>
+                </form>
+              </div>
+
+              <div className="footer-card posts-card">
+                <h4>Latest Posts</h4>
+                <ul>
+                  <li>
+                    <a href="#post1">How Solvira Empowers Businesses with AI</a>
+                    <span>May 18, 2025</span>
+                  </li>
+                  <li>
+                    <a href="#post2">Upcoming: Blockchain Project Launch</a>
+                    <span>June 5, 2025</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer-bottom">
+            © {currentYear} | Solvira Tech Pvt. Ltd. | All rights reserved
+          </div>
         </div>
-      
-        <motion.div
-          className="footer-bottom"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <p>Copyright © {currentYear}  | SOLVIRA TECH SOLUTIONS PRIVATE LIMITED | All rights reserved</p>
-        </motion.div>
-
-        <ScrollToTop />
-      </motion.footer>
-
+      </footer>
+      <ScrollToTop />
+      <ToastContainer />
     </>
   );
 };
