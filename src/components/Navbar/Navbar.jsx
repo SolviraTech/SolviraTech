@@ -29,7 +29,7 @@ const Navbar = () => {
         setIsOpen(false);
       }
     };
-
+ 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
     
