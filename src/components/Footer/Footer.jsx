@@ -53,7 +53,7 @@ const Footer = () => {
             <div className="contact-item">
               <FaPhoneAlt className="icon" />
               <div>
-                <strong>(+91) 8948313502</strong><br />
+                <strong>(+91) 8923163048</strong><br />
                 solviratech@gmail.com
               </div>
             </div>
@@ -67,7 +67,8 @@ const Footer = () => {
             <div className="contact-item">
               <FaMapMarkerAlt className="icon" />
               <div>
-                COMING SOON, INDIA
+                Ghaziabad,
+                Uttar Pradesh, India
               </div>
             </div>
           </div>
@@ -83,7 +84,7 @@ const Footer = () => {
                 <p>Solvira Tech Pvt. Ltd. is an India-based IT company developing innovative products to bring smartness and efficiency to your business operations.</p>
                 <div className="social">
                   <a href="#Facebook"><FaFacebookF className="social-icon" /></a>
-                  <a href="#Instagram"><FaInstagram className="social-icon" /></a>
+                  <a href="https://www.instagram.com/solviratech/" target="_blank" rel="noopener noreferrer"><FaInstagram className="social-icon" /></a>
                   <a href="#LinkedIn"><FaLinkedinIn className="social-icon" /></a>
                   <a href="#Twitter">
                     <span className="social-icon x-icon">
