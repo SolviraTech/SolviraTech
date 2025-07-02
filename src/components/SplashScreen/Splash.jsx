@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { loadSlim } from "tsparticles-slim";
 import "./Splash.css";
 
 const Splash = ({ onFinish }) => {
@@ -9,7 +9,7 @@ const Splash = ({ onFinish }) => {
   const [particlesOptions, setParticlesOptions] = useState({});
 
   const particlesInit = async (engine) => {
-    await loadFull(engine);
+    await loadSlim(engine);
   };
 
   useEffect(() => {
@@ -18,22 +18,23 @@ const Splash = ({ onFinish }) => {
     setParticlesOptions({
       fullScreen: { enable: false },
       background: { color: "#0f2027" },
-      fpsLimit:24,
+      fpsLimit: isMobile ? 20 : 30,
       particles: {
         color: { value: "#ffffff" },
         links: {
-          enable: true,
+          enable: !isMobile,
           color: "#ffffff",
-          distance: isMobile ? 120 : 150, // shorter lines on mobile
+          distance: isMobile ? 100 : 150,
         },
         move: {
           enable: true,
-          speed: 2,
+          speed: isMobile ? 0.5 : 1,
         },
         number: {
-          value: isMobile ? 30 : 50, // fewer dots on mobile
+          value: isMobile ? 15 : 25,
         },
         size: { value: 2 },
+        opacity: { value: 0.5 }
       },
     });
   }, []);
@@ -41,25 +42,24 @@ const Splash = ({ onFinish }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(false);
-      if (onFinish) onFinish();
     }, 4000);
 
     return () => clearTimeout(timer);
-  }, [onFinish]);
+  }, []);
 
   return (
-    <AnimatePresence
-      onExitComplete={() => {
-        if (onFinish) onFinish();
-      }}
-    >
+    <AnimatePresence onExitComplete={onFinish}>
       {show && (
         <motion.div
           className="splash-container"
-          initial={{ y: 0 }}
-          animate={{ y: 0 }}
-          exit={{ y: "-100%" }}
-          transition={{ duration: 1 }}
+          initial={{ opacity: 1 }}
+          exit={{ 
+            opacity: 0,
+            transition: { 
+              duration: 0.8,
+              ease: "easeInOut" 
+            }
+          }}
         >
           <Particles
             id="tsparticles"
@@ -67,12 +67,7 @@ const Splash = ({ onFinish }) => {
             options={particlesOptions}
           />
 
-          <motion.div
-            className="splash-content"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
+          <div className="splash-content">
             <div className="splash-lines">────────────</div>
             <motion.h1
               className="splash-title"
@@ -91,7 +86,7 @@ const Splash = ({ onFinish }) => {
             >
               Smart . Scalable . Solvira
             </motion.p>
-          </motion.div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

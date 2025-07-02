@@ -1,25 +1,3 @@
-.splash-background {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-color: #0f2027;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.particles-canvas,
-#tsparticles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
 .splash-container {
   position: fixed;
   top: 0;
@@ -33,13 +11,32 @@
   flex-direction: column;
   z-index: 9999;
   overflow: hidden;
+  /* GPU Acceleration */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: opacity;
+}
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
 .splash-content {
   position: relative;
   z-index: 2;
   text-align: center;
-  transform: translateY(-10%); /* moves text higher on screen */
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .splash-title {
@@ -48,13 +45,6 @@
   font-weight: 800;
   letter-spacing: 1.5px;
   margin: 0.5rem 0;
-}
-
-.splash-separator {
-  border: none;
-  border-top: 2px solid #8dc63f;
-  width: 80px;
-  margin: 0.5rem auto;
 }
 
 .splash-tagline {
@@ -72,7 +62,8 @@
 
 @media (max-width: 768px) {
   .splash-content {
-    transform: translateY(-20%); /* push text higher for smaller devices */
+    transform: none;
+    padding: 0 20px;
   }
   .splash-title {
     font-size: 2rem;
