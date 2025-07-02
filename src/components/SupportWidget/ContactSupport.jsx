@@ -105,9 +105,9 @@ const ContactSupport = () => {
             Solvira Tech is an India-based IT company developing innovative products to bring smartness and
             efficiency to your business operations.
           </p>
-          <p><FaPhoneAlt /> +91 8948313502</p>
+          <p><FaPhoneAlt /> +91 8923163048</p>
           <p><FaEnvelope /> solviratech@gmail.com</p>
-          <p><FaMapMarkerAlt /> COMING SOON, INDIA</p>
+          <p><FaMapMarkerAlt /> Ghaziabad, INDIA</p>
         </div>
 
         <div className="contact-support-right">
