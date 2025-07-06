@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import './ContactSupport.css';
 import './ContactSupport.css';
 import { FaUser, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
@@ -95,8 +94,8 @@ const ContactSupport = () => {
   return (
     <section id='contact' className='padding-top'>
       <div className="services-heading">
-        {/* <h6 className="sub-heading">What We Do</h6> */}
-        <h2 className="main-heading">Contact US</h2>
+        <h6 className="sub-heading">We'll love to hear from you</h6>
+        <h2 className="main-heading">CONTACT US</h2>
       </div>
       <div className="contact-support-wrapper">
         <div className="contact-support-left">
