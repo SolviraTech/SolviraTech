@@ -54,7 +54,7 @@ function Services() {
                 </div>
                 <h3 className="bottom10">{service.title}</h3>
                 <p className="bottom15">{service.description}</p>
-                <a href="#!" className="btn-border border_radius text-uppercase">View More</a>   
+                {/* <a href="#!" className="btn-border border_radius text-uppercase">View More</a>    */}
               </div>
             </div>
           ))}
