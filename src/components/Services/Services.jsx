@@ -4,32 +4,32 @@ import './Services.css';
 const servicesData = [
   {
     title: 'Website Development',
-    image: 'images/service_01.jpeg',
+    image: 'images/Service_01.webp',
     description: 'A well-maintained website can help you gain a competitive advantage...',
   },
   {
     title: 'Application Development',
-    image: 'images/service_02.jpeg',
+    image: 'images/Service_02.webp',
     description: 'Businesses are using apps to improve their processes...',
   },
   {
     title: 'Software Development',
-    image: 'images/service_03.jpeg',
+    image: 'images/Service_03.webp',
     description: 'Collective processes involved in creating software programs...',
   },
   {
     title: 'Graphic Designing',
-    image: 'images/service_04.jpeg',
+    image: 'images/Service_04.webp',
     description: 'Graphic design can boost your company’s marketing...',
   },
   {
     title: 'Business Consulting',
-    image: 'images/service_05.jpeg',
+    image: 'images/Service_05.webp',
     description: 'Ability to pay only for the services needed...',
   },
   {
     title: ' Video Editing',
-    image: 'images/service_06.jpeg',
+    image: 'images/Service_06.webp',
     description: 'Your Vision, Perfectly Edited...',
   }
 ];
@@ -54,7 +54,7 @@ function Services() {
                 </div>
                 <h3 className="bottom10">{service.title}</h3>
                 <p className="bottom15">{service.description}</p>
-                <a href="#!" className="btn-border border_radius text-uppercase">View More</a>   
+                {/* <a href="#!" className="btn-border border_radius text-uppercase">View More</a>    */}
               </div>
             </div>
           ))}
