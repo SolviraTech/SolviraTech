@@ -25,11 +25,11 @@ const handleContactClick = () => {
         showArrows={false}
         interval={4000}
       >
-        <div><img src="/images/service_01.jpeg" alt="Slide 1" /></div>
-        <div><img src="/images/service_02.jpeg" alt="Slide 2" /></div>
-        <div><img src="/images/service_03.jpeg" alt="Slide 3" /></div>
-        <div><img src="/images/service_04.jpeg" alt="Slide 4" /></div>
-        <div><img src="/images/service_05.jpeg" alt="Slide 5" /></div>
+        <div><img src="/images/Service_01.webp" alt="Slide 1" /></div>
+        <div><img src="/images/Service_02.webp" alt="Slide 2" /></div>
+        <div><img src="/images/Service_03.webp" alt="Slide 3" /></div>
+        <div><img src="/images/Service_04.webp" alt="Slide 4" /></div>
+        <div><img src="/images/service_05.webp" alt="Slide 5" /></div>
       </Carousel>
 
       <div className="hero-overlay">
