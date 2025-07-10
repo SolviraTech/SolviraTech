@@ -19,8 +19,9 @@ function App() {
           <Navbar />
           <HeroBanner />
           <Services />
-          <ContactSupport />
+          
           <AboutUs />
+          <ContactSupport />
           <Footer />
         </>
     //   )}
