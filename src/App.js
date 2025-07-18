@@ -19,7 +19,6 @@ function App() {
           <Navbar />
           <HeroBanner />
           <Services />
-          
           <AboutUs />
           <ContactSupport />
           <Footer />
